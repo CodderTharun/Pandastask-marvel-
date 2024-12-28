@@ -1,0 +1,44 @@
+Code for pandas task
+----------------------------
+import pandas as pd  # Import pandas for data manipulation
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
+
+# Step 1: Create a mock dataset for student attendance marks
+data = {
+    'Student': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Attendance Marks': [90, 85, 78, 95, 88]
+}
+
+# Step 2: Create a DataFrame using the data
+df = pd.DataFrame(data)
+
+# Display the first few rows of the dataset
+df.head()
+
+# --- Line Graph: Attendance Marks for Each Student ---
+plt.figure(figsize=(10, 6))  # Set the size of the plot
+plt.plot(df['Student'], df['Attendance Marks'], marker='o', linestyle='-', color='b')  # Plot the line graph
+plt.title('Line Graph: Attendance Marks for Each Student')  # Title of the plot
+plt.xlabel('Students')  # X-axis label
+plt.ylabel('Attendance Marks')  # Y-axis label
+plt.grid(True)  # Add grid for easier reading
+plt.xticks(rotation=45)  # Rotate student names for better visibility
+plt.show()  # Display the plot
+
+# --- Bar Graph: Attendance Marks Comparison ---
+plt.figure(figsize=(8, 5))  # Set the size of the plot
+plt.bar(df['Student'], df['Attendance Marks'], color='g')  # Bar graph for Attendance Marks
+plt.title('Bar Graph: Attendance Marks of Students')  # Title of the plot
+plt.xlabel('Students')  # X-axis label
+plt.ylabel('Attendance Marks')  # Y-axis label
+plt.xticks(rotation=45)  # Rotate student names for better visibility
+plt.show()  # Display the plot
+
+# --- Scatter Plot: Attendance Marks (for visualization) ---
+plt.figure(figsize=(8, 5))  # Set the size of the plot
+plt.scatter(df['Student'], df['Attendance Marks'], color='r')  # Scatter plot for Attendance Marks
+plt.title('Scatter Plot: Attendance Marks for Each Student')  # Title of the plot
+plt.xlabel('Students')  # X-axis label
+plt.ylabel('Attendance Marks')  # Y-axis label
+plt.xticks(rotation=45)  # Rotate student names for better visibility
+plt.show()  # Display the plot
